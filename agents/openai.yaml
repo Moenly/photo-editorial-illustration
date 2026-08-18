@@ -1,4 +1,4 @@
 interface:
   display_name: "Photo Editorial Illustration"
-  short_description: "Create selective open-form editorial scenes from one photo"
-  default_prompt: "Use $photo-editorial-illustration to turn my uploaded photo into a selective open-form painterly editorial composition."
+  short_description: "Freshly repaint one photo as an open editorial vignette"
+  default_prompt: "Use $photo-editorial-illustration to keep my uploaded photo intact above and freshly repaint its key semantic anchors as a more abstract, open-form gouache vignette below."

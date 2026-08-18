@@ -1,11 +1,11 @@
 ---
 name: photo-editorial-illustration
-description: Turn one uploaded photograph into a finished vertical editorial composition that keeps the original photo intact and pairs it with a selectively reconstructed, open-form painterly vignette plus a short poetic English title. Use for photo-plus-illustration diptychs, representational editorial vignettes, gouache memory panels, broken-boundary compositions, or artwork that should remain recognizable without becoming a rectangular thumbnail or full-scene repaint.
+description: Turn one uploaded photograph into a finished vertical editorial composition that keeps the original photo intact and pairs it with a freshly repainted, selectively abstracted, open-form gouache vignette plus a short poetic English title. Use for photo-plus-illustration diptychs, representational memory panels, broken-boundary compositions, or artwork whose source connection should come from pose, color, and spatial relationships rather than source-pixel cutouts, posterization, or vector tracing.
 ---
 
 # Photo Editorial Illustration
 
-Create one finished image from one uploaded photograph. Preserve the source photo as evidence; reinterpret only its most meaningful visual relationships below as a recognizable but incomplete editorial illustration.
+Create one finished image from one uploaded photograph. Preserve the source photo as evidence; use semantic observation to repaint only its most meaningful visual relationships below as a recognizable but incomplete editorial illustration.
 
 ## Invocation
 
@@ -21,23 +21,27 @@ Read [references/art-direction.md](references/art-direction.md) completely befor
 
 ## Workflow
 
-1. Inspect the photograph and identify three to six scene anchors: the primary subject, its gesture or silhouette, the strongest spatial relationship, one or two identity cues, the dominant color role, and the main light-shadow tension.
-2. Rank those anchors. Select only three to five for the lower vignette. Omit 30-60% of the photographed content when it does not carry identity or narrative weight.
+1. Inspect the photograph and identify three to six semantic anchors: the primary subject, gesture or body axis, strongest spatial relationship, one identity cue, dominant color role, and main light-shadow tension. Describe these anchors in words; do not extract them as masks or cutouts.
+2. Rank those anchors. Select only three to five for the lower vignette. For portraits and people, omit or reinvent 50-70% of photographed detail. For landscapes, architecture, crowds, and machines, omit 30-60% when it does not carry identity or narrative weight.
 3. Crop by meaning rather than by the source aspect ratio. Remove large areas of sky, floor, wall, water, foliage, or side clutter when they only fill the photograph. Retain a background region only when it explains the subject or carries a decisive color or light relationship.
 4. Plan a vertical composition with the unmodified photograph above and a warm ivory panel below. Do not place a second rectangular image inside the panel.
-5. Reconstruct the selected anchors as an open-form painterly vignette. Let silhouettes, color bands, dry-brush edges, and washes define an irregular footprint. Allow a meaningful subject or gesture to project beyond a background mass when the source supports it.
-6. Render with matte gouache, tempera, and light watercolor qualities. Simplify structure and detail while preserving enough evidence to connect the vignette to the photograph.
+5. Generate the lower vignette from scratch from the written semantic anchors. Do not transform, trace, posterize, quantize, blur, vectorize, mask, or reuse pixels from the source photograph. Let two to five broad painterly masses, a few independent brush strokes, and ivory negative space define an irregular footprint.
+6. Render with matte gouache, tempera, and light watercolor qualities. Preserve gesture, orientation, color roles, and one identity cue, while freely reinventing internal contours, facial information, hair detail, folds, highlights, and shadow boundaries. Allow a meaningful subject or gesture to project beyond a background mass when the source supports it.
 7. Create one original English title of two to six words grounded in visible facts or atmosphere. Set it below the vignette in a quiet editorial serif.
-8. Produce the final composite. Keep the original photo pixels unchanged whenever possible. If an image model cannot preserve the photo accurately, generate only the lower vignette and assemble the photo, panel, vignette, and title with a raster compositor.
+8. Produce the final composite. Keep the upper photograph pixels unchanged. Generate the lower vignette separately, then use a raster compositor only to assemble the photograph, ivory panel, generated vignette, and title. The compositor must never create the artistic transformation.
 9. Run every rejection check before returning the image. Revise any failed output.
 
-## Recognition Standard
+## Abstraction Standard
 
-Aim for 45-65% visual recognizability. A viewer should connect the vignette to the source through three to five retained anchors, but should not see a filtered thumbnail or a complete scene repaint.
+Aim for 45-65% visual recognizability. A viewer should connect the vignette to the source through three to five semantic anchors, but should not be able to recover the source photograph's internal tonal map.
+
+- Too literal: facial features, hair strands, clothing folds, highlights, shadow boundaries, or local color patches closely map to the photograph. This is tracing, even when painterly texture is added.
+- Correct: pose, silhouette axis, dominant clothing or environmental colors, subject relationship, and one identity cue remain recognizable; most internal detail is omitted or freshly invented.
+- Too abstract: the pose, subject category, or key spatial relationship cannot be inferred, or the scene collapses into generic icons and disconnected shapes.
 
 - Preserve the primary subject's identity, orientation, and key relationship rather than every contour.
 - Preserve perspective only where it supports the retained anchors; allow omitted regions to become ivory negative space.
-- Keep people readable through selected heads, torsos, clothing masses, gestures, or group density. Figures may merge, taper, or dissolve at their edges.
+- Keep people readable through body axis, head mass, clothing mass, gesture, hair direction, or group density. Leave faces blank or minimally indicated. Figures may merge, taper, or dissolve at their edges.
 - Keep architecture through selected massing, openings, rooflines, color bands, or structural axes. Do not reproduce every wall.
 - Keep landscapes through only the decisive terrain, canopy, cloud, water, or horizon forms. Omit the sky entirely when it is not essential.
 - Keep crowds as an intelligible social field while allowing walls, ceilings, floors, and peripheral figures to disappear.
@@ -50,11 +54,22 @@ Aim for 45-65% visual recognizability. A viewer should connect the vignette to t
 - Use selective projection deliberately: a person, ladder, roofline, machine part, tree, shadow, or color stroke may cross beyond the main painted mass.
 - Keep boundary breaking traceable to the source scene. Do not add random decorative splashes.
 
+## Tool Boundary
+
+- Use an image-generation or image-editing model to create the lower vignette as new pixels from semantic observation.
+- A raster editor or compositor may resize, crop, position, mask the newly generated vignette against the ivory panel, and set the title. It may not derive the vignette from the source photograph.
+- Do not use source cutouts, subject masks, silhouette extraction, palette reduction, posterization, quantization, edge tracing, auto-vectorization, or blur as a substitute for generation.
+- If no image-generation or image-editing model is available, stop and explain that the lower vignette cannot be produced faithfully in the current session. Offer the production prompt if useful, but never return a traced or filtered fallback as the finished artwork.
+
 ## Hard Rejections
 
 Reject and redo the lower panel when any of these are true:
 
 - it reads as a rectangular crop, square thumbnail, photo filter, or full-scene repaint;
+- it contains any reused source-photo pixels, cutout fragments, masks, or blurred source regions in the lower panel;
+- it resembles Adobe Illustrator Image Trace, vector tracing, posterization, quantization, palette reduction, or hard tonal partitions;
+- facial features, hair strands, clothing folds, highlights, shadows, or internal contours map closely to the source photo;
+- it uses clean geometric icon construction instead of freshly painted masses and independent brush decisions;
 - it preserves nearly all of the original background instead of making editorial omissions;
 - the main subject cannot be inferred from the retained anchors;
 - people become generic bars, dots, capsules, or identical pictograms;
@@ -67,7 +82,7 @@ Reject and redo the lower panel when any of these are true:
 
 ## Output
 
-Return only the completed image unless the user asks for process notes, title options, or prompt text. Do not require style-reference images from the user.
+Return only the completed image unless the user asks for process notes, title options, or prompt text. Do not require style-reference images from the user. When a faithful fresh repaint cannot be generated, say so explicitly instead of returning a deterministic raster imitation.
 
 ## Lineage
 

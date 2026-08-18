@@ -1,4 +1,4 @@
 interface:
   display_name: "Photo Editorial Illustration"
-  short_description: "Turn one photo into a recognizable editorial illustration"
-  default_prompt: "Use $photo-editorial-illustration to turn my uploaded photo into a photo-plus-painterly-vignette editorial composition."
+  short_description: "Create selective open-form editorial scenes from one photo"
+  default_prompt: "Use $photo-editorial-illustration to turn my uploaded photo into a selective open-form painterly editorial composition."
